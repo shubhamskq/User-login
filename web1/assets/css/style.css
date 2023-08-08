@@ -1,0 +1,71 @@
+body {
+    background-color: #fff;
+}
+
+.form-login {
+    text-align: center;
+    border: #121212;
+}
+
+.btn-sign {
+    margin: 5px 0px 5px 0px;
+    border-radius: 5px;
+    height: 30px;
+    width: 40%;
+    background-color: rgb(17, 51, 246);
+}
+
+.btn-in {
+    margin: 5px 0px 5px 0px;
+    border-radius: 5px;
+    height: 30px;
+    width: 40%;
+
+}
+
+.sign-p {
+    font-size: 14px;
+    color: #fff;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.footer-upper {
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+
+}
+
+.f1 {
+    text-align: center;
+
+}
+
+.f2 {
+    text-align: center;
+
+}
+
+.con {
+    margin: 5px 0px 5px 0px;
+    border-radius: 5px;
+    height: 40px;
+    width: 20%;
+
+}
+
+.con1 {
+    margin: 5px 0px 5px 0px;
+    border-radius: 5px;
+    height: 20%;
+    width: 20%;
+
+}
+
+.btn-con {
+    margin: 5px 0px 5px 0px;
+    border-radius: 5px;
+    height: 10%;
+    width: 20%;
+    background-color: rgb(17, 51, 246);
+}
