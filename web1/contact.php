@@ -1,5 +1,9 @@
 <html>
 
+<head>
+    <link rel="stylesheet" href="style.css">
+</head>
+
 <body>
     <br><br>
     <form class="form-login" action="config/db2.php" method="post">
