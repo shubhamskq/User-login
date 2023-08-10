@@ -1,0 +1,71 @@
+<?php include_once "include/header.php";
+
+if (isUserLogin()) {
+    header("Location:" . base_url());
+}
+
+$title = "Login";
+$alert = array();
+if (isset($_POST['submit'])) {
+    $phone = isset($_POST["phone"]) ? $_POST["phone"] : '';
+    $password = isset($_POST["password"]) ? $_POST["password"] : '';
+
+    $result = mysqli_query($conn, "SELECT * FROM user WHERE phone = $phone");
+    if (!$result || mysqli_num_rows($result) == 0) {
+        $alert['type'] = 'notlogin';
+        $alert['msg']  = 'Incorrect Phone Number or Password';
+    } else {
+        $row = mysqli_fetch_assoc($result);
+
+        $_SESSION['userId'] = $row['id'];
+        $_SESSION['phone'] = $row['phone'];
+        $_SESSION['password'] = $row['password'];
+
+        header("Location: index.php");
+        die;
+    }
+}
+?>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="css/style.css">
+<ul class="nav nav-pills nav-justified mb-3" id="ex1" role="tablist">
+    <li class="nav-item" role="presentation">
+        <a class="nav-link active text-center" id="tab-login" data-mdb-toggle="pill" role="tab" aria-controls="pills-login" aria-selected="true">Login</a>
+</ul>
+<?php if (empty($alert)) { ?>
+    <form class="form-login" action="" method="post">
+        <p class="text-center mb-3">Sign in with:</p>
+        <button type="button" class="btn btn-link btn-floating mx-1">
+            <a href="https://www.facebook.com/login/" class="fa fa-facebook"></a>
+        </button>
+        <button type="button" class="btn btn-link btn-floating mx-1">
+            <a href="https://accounts.google.com/InteractiveLogin/signinchooser?continue=https%3A%2F%2Fmail.google.com%2Fmail%2Fu%2F0%2F&emr=1&followup=https%3A%2F%2Fmail.google.com%2Fmail%2Fu%2F0%2F&osid=1&passive=1209600&service=mail&ifkv=AXo7B7Xe7StUDF2Ux3W90BIjfdiF-SCmqgO7rjIRCi2750ct-sj_CxChQgpekrakZupeYktpnrtvZw&flowName=GlifWebSignIn&flowEntry=ServiceLogin" class="fa fa-google"></a>
+        </button>
+        <button type="button" class="btn btn-link btn-floating mx-1">
+            <a href="https://twitter.com/i/flow/login" class="fa fa-twitter"></a>
+        </button>
+        <button type="button" class="btn btn-link btn-floating mx-1">
+            <a href="https://github.com/login" class="fa fa-github"></a>
+        </button>
+        <p class="text-center">or:</p>
+        <input type="number" name="phone" class="btn-in" placeholder="  Phone No" class="" maxlength="10" required><br>
+        <input type="password" name="password" class="btn-in" placeholder="  Password" class="" required><br>
+        <input type="checkbox">Remember me <br>
+        <a href="#">Forgot password?</a><br>
+        <button type="submit" name="submit" class="btn-sign">
+            <p class="sign-p">SIGN IN</p>
+        </button>
+        <p>Not a member?<a href="registration.php">Register</a></p>
+    </form>
+<?php } else { ?>
+    <section class="container pt-4">
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <img src="<?= base_url('assets/images/incorrect.gif') ?>" />
+                <h3 class="text-danger"><?= $alert['msg'] ?></h3>
+                <a href="<?= base_url('login.php') ?>" class="btn btn-warning">Try Again</a>
+            </div>
+        </div>
+    </section>
+<?php } ?>
+<?php include_once "include/footer.php" ?>
