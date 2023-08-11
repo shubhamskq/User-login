@@ -1,5 +1,5 @@
 body {
-    background-color: #fff;
+    background-color: #93e2f0;
 }
 
 .form-login {
@@ -68,4 +68,109 @@ body {
     height: 10%;
     width: 20%;
     background-color: rgb(17, 51, 246);
+}
+
+.about-head {
+    text-align: center;
+    color: #fff;
+}
+
+.nav-link {
+    text-align: end;
+}
+
+.con-form {
+    text-align: center;
+}
+
+.profile_icons p i {
+    padding-right: 1px;
+}
+
+.profile_icons a {
+    text-decoration: none;
+    color: black;
+}
+
+.profile_u {
+    text-decoration: none;
+    color: black;
+}
+
+.form_up {
+    display: flex;
+    justify-content: center;
+}
+
+.head_up {
+    text-align: center;
+}
+
+.user_info {
+    text-align: center;
+
+}
+
+.user_name {
+    width: 40%;
+    display: flex;
+    justify-content: flex-start;
+    padding-left: 20px;
+}
+
+.user_head {
+    display: flex;
+    flex-direction: row;
+}
+
+.ck_editor {
+    width: 80%;
+}
+
+.blog_title {
+    display: flex;
+    justify-content: center;
+}
+
+.blog_in {
+    width: 100%;
+}
+
+.blog_image {
+    display: flex;
+    justify-content: end;
+}
+
+.submit_img {
+    height: 30;
+}
+
+.form-control {
+    display: block;
+    width: 30%;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: 0.25rem;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+.blog_form {
+    box-sizing: border-box;
+    padding: 2rem;
+    border-radius: 1rem;
+    display: grid;
+    gap: 2rem;
+}
+
+.blog_head {
+    color: rgb(16, 33, 187);
 }
